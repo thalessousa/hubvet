@@ -1,0 +1,12 @@
+echo "run phpmd in database/factories"
+php ./vendor/bin/phpmd database/factories ansi /development/ruleset-factories.xml
+echo "run phpmd in database/migrations"
+php ./vendor/bin/phpmd database/migrations ansi /development/ruleset-migrations.xml
+echo "run phpmd in database/seeders"
+php ./vendor/bin/phpmd database/seeders ansi /development/ruleset-seeders.xml
+echo "run phpmd in tests"
+php ./vendor/bin/phpmd tests ansi /development/ruleset-tests.xml
+echo "run phpmd in app"
+php ./vendor/bin/phpmd app ansi /development/ruleset-app.xml
+echo "run phpmd in routes"
+php ./vendor/bin/phpmd routes ansi codesize,unusedcode,naming,cleancode,design,controversial

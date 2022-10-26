@@ -12,6 +12,11 @@ interface BaseServiceInterface
     /**
      * @throws UnauthorizedUserException
      */
+    public function paginate(array $data): Paginator;
+
+    /**
+     * @throws UnauthorizedUserException
+     */
     public function index(): Collection;
 
     /**

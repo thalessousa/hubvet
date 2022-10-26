@@ -2,6 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\Product;
+use App\Models\Sector;
+use App\Models\Store;
+use App\Models\User;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +18,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if ($this->app->environment('local')) {
+            $this->app->register(\Laravel\Telescope\TelescopeServiceProvider::class);
+            $this->app->register(TelescopeServiceProvider::class);
+        }
     }
 
     /**
@@ -23,6 +31,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Relation::morphMap([
+            'users' => User::class,
+            'sectors' => Sector::class,
+            'stores' => Store::class,
+            'products' => Product::class,
+        ]);
     }
 }

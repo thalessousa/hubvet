@@ -1,11 +1,9 @@
-# supermarket challenge
-Context:
-
+# Supermarket challenge
+# Context:
 You must implement a system to supermarket product management. 
-
 The client must be able to register their products and to create product sectors, such as Bakery, Hygiene and cleaning, Dairy, Drinks, among others. # These sectors must be applied to products. Each market must be able to create their own sector.
 
-# I requirements:
+# Requirements:
 3 kind of entities: Products, Sectors and Markets
 Login screen with 2 registered users (login: market1 / market2 - password: 123456)
 Use Passport for authentication

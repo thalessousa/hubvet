@@ -17,8 +17,6 @@ class SectorFactory extends Factory
             'description' => $this->faker->text(),
             'aisle' => $this->faker->randomDigitNotZero(),
             'store_id' => Store::factory(),
-            'price' => $this->faker->numberBetween(1, 25),
-            'stock' => $this->faker->numberBetween(10, 100),
         ];
     }
 }

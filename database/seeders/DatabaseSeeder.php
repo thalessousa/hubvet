@@ -11,8 +11,8 @@ class DatabaseSeeder extends Seeder
 
     private $local = [
         StoreSeeder::class,
-        SectorSeeder::class,
         ProductSeeder::class,
+        SectorSeeder::class,
         UserSeeder::class,
     ];
 

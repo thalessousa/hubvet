@@ -14,6 +14,7 @@ class StoreSeeder extends Seeder
      */
     public function run()
     {
-            Store::factory()->count(2)->create();
+            Store::factory()->count(1)->create(['id' => 1]);
+            Store::factory()->count(1)->create(['id' => 2]);
     }
 }

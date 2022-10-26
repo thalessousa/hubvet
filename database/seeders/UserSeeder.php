@@ -15,7 +15,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-            User::factory()->count(5)->create();
             DB::table('users')->insert([
                 'name' => 'market1',
                 'password' => '123456',

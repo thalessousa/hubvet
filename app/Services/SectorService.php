@@ -6,7 +6,7 @@ use App\Repositories\SectorRepository;
 
 class SectorService extends BaseService implements SectorServiceInterface
 {
-    protected $defaultRelations = ['sector'];
+    protected $defaultRelations = ['store'];
 
     /**
      * Method __construct

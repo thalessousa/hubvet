@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::group(
+    [
+        'middleware' => ['auth:sanctum'],
+    ],
+    function () {
+        Route::apiResource('products', 'ProductController');
+        Route::apiResource('sectors', 'SectorController');
+        Route::apiResource('stores', 'StoreController');
+        Route::apiResource('users', 'UserController')->except(['update']);
+        Route::prefix('users')->group(function () {
+            Route::controller(UserController::class)->group(function () {
+                Route::get('', 'login');
+                Route::get('', 'login');
+                Route::delete('{user}', 'destroy');
+            });
+        });
+    }
+);
